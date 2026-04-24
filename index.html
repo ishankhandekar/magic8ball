@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Orb Knows All</title>
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+
+    <!-- 1. Fonts: Almendra, Montez, and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://js.puter.com/v2/"></script>
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <audio id="ambient" loop>
+        <source src="audio/background.flac" type="audio/mpeg" />
+    </audio>
+    <audio id="reveal">
+        <source src="audio/mixkit-magical-light-transition-2583.wav" type="audio/mpeg" />
+    </audio>
+    <audio id="press">
+        <source src="audio/freesound_community-ping-43757.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="error">
+        <source src="audio/miraclei-sample_error_input04_kofi_by_miraclei-363640.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="reset">
+        <source src="audio/u_hm3ohsiik6-breath-out-242642.mp3" type="audio/mpeg" />
+    </audio>
+</head>
+
+
+<body class="purple">
+    
+    <div id="loadInScreen">
+        <div id="pageLoadContainer">
+            <h1>The Orb Knows All</h1>
+            <p>In this fun twist on a traditional magic 8 ball, an interactive glowing orb responds to your curiosity
+                through movement and energy. As you guide and "stir" its surface, the orb gradually fills with shifting
+                light until it reaches its peak and reveals your answer. It's part game, part experiment—an atmospheric
+                little experience where your actions shape the outcome. To start playing, click anywhere on the screen. 
+                To enhance the experience, turn your volume up to hear mystical sounds.
+            </p>
+            <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.10/dist/dotlottie-wc.js"
+                type="module"></script>
+            <dotlottie-wc src="https://lottie.host/2513382b-0595-4ba2-ac97-c5b6900bc836/1qIcfCiOUr.lottie"
+                style="width: 100px;height: 100px" autoplay loop></dotlottie-wc>
+            </dotlottie-wc>
+        </div>
+    </div>
+    <div class="container">
+        <button class="settings-btn" id="settingsBtn">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div class="orbContainer">
+            <div class="orb" id="orb">
+                <div class="liquid"></div>
+                <div class="answer-text">blah blah blah</div>
+            </div>
+        </div>
+        <div id="textStack">
+            <h1 id="promptHeader"></h1>
+            <h1 id="mainHeader">Consult the Orb</h1>
+        </div>
+        <div class="inputWrapper">
+            <div class="input-group">
+                <input type="text" id="question" placeholder="Ask a question..." />
+                <span class="bar"></span>
+            </div>
+            <button id="askBtn"><span class="material-symbols-outlined" id="btnIcon">change_history</span></button>
+        </div>
+        <p id="answer"></p>
+    </div>
+
+
+
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h2>Settings</h2>
+            <button class="close-btn" id="closeSettings">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="settings-content">
+            <div class="setting-item">
+                <label for="soundToggle">Ambience</label>
+                <label class="toggle">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="soundEffectToggle">Sound Effects</label>
+                <label class="toggle">
+                    <input type="checkbox" id="soundEffectToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="themeSelect">Theme</label>
+                <select id="themeSelect"> 
+                    <option value="blue">Mystic Blue</option>
+                    <option value="purple">Arcane Purple</option>
+                    <option value="green">Serene Green</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="settings-overlay" id="settingsOverlay"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
